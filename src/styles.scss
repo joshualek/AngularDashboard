@@ -13,42 +13,15 @@ body {
   --primary-color: #0d7261;
 }
 
-// $mat-primary: (
-//     main: #0d7261,
-//     lighter: #3f9e8b,
-//     darker: #0a4d3c,
-//     200: #0d7261,
-//     contrast: (
-//         main: #ffffff,
-//         lighter: #000000,
-//         darker: #ffffff,
-//     ),
-// );
-
-// $theme-primary: mat.define-palette($mat-primary, main, lighter, darker);
-// $theme-accent: mat.define-palette(mat.$indigo-palette, A200,A100, A400);
-
-// $my-theme: mat.define-light-theme((
-//   color: (
-//     primary: $theme-primary,
-//     accent: $theme-accent,
-//   ),
-//   typography: mat.define-typography-config(),
-//   density: 0,
-// ));
-
-// @include mat.all-component-themes($my-theme);
-
 $mat-primary: (
-  main: #cc0000,
-  lighter: #f0b3b3,
-  darker: #b90000,
-  200: #cc0000,
-  contrast:
-    (
-      main: #ffffff,
-      lighter: #000000,
-      darker: #ffffff,
+    main: #0d7261,
+    lighter: #3f9e8b,
+    darker: #0a4d3c,
+    200: #0d7261,
+    contrast: (
+        main: #ffffff,
+        lighter: #000000,
+        darker: #ffffff,
     ),
 );
 
