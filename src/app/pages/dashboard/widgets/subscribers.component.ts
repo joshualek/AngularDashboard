@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-subscribers',
   standalone: true,
-  imports: [],
+  imports: [MatIcon],
   template: `
-    <p>
-      subscribers works!
-    </p>
+    <div class="row mb-8 mt-8">
+      <p class="stat">25,020</p>
+      <mat-icon class="text-green">person</mat-icon>
+    </div>
+    <div class="text-dim-gray stat-subtext">
+      <span class="text-green">+502</span> in the last 28 days
+    </div>
   `,
   styles: ``
 })
