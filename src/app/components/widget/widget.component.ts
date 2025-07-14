@@ -1,5 +1,5 @@
 import { Component, input, signal } from '@angular/core';
-import { Widget } from '../../models/dashboard';
+import { Widget } from '../../models/widget-config.model';
 import { NgComponentOutlet } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
@@ -11,7 +11,7 @@ import { WidgetOptionsComponent } from "./widget-options/widget-options.componen
   imports: [NgComponentOutlet, MatButtonModule, MatIcon, WidgetOptionsComponent],
   template: `
     <div class="container mat-elevation-z3" [style.backgroundColor]="data().backgroundColor ?? 'white'" [style.color]="data().color ?? 'inherit'">
-      <h3 class="m-0">{{ data().label }}</h3>
+      <!-- <h3 class="m-0">{{ data().label }}</h3> -->
       <button
         mat-icon-button
         class="settings-button"

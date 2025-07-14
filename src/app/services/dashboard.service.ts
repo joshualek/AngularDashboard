@@ -1,30 +1,19 @@
 import { computed, Injectable, signal } from '@angular/core';
-import { Widget } from '../models/dashboard';
-import { SubscribersComponent } from '../pages/dashboard/widgets/subscribers.component';
-import { ViewsComponent } from '../pages/dashboard/widgets/views.component';
+import { Widget } from '../models/widget-config.model';
+import { WidgetRegistryService } from './widget-registry.service';
+import widgetJsonConfig from '../../assets/dashboard-widgets.json';
 
 @Injectable()
 export class DashboardService {
-  widgets = signal<Widget[]>([
-    {
-      id: 1,
-      label: 'Subscribers',
-      content: SubscribersComponent,
-      rows: 1,
-      columns: 1,
-      backgroundColor: 'var(--palette-primary-main)', 
-      color:'whitesmoke',
-    },
-    {
-      id: 2,
-      label: 'Views',
-      content: ViewsComponent,
-      rows: 1,
-      columns: 1,
-      backgroundColor: 'var(--palette-primary-main)', 
-      color: 'whitesmoke',
-    },
-  ]);
+  widgets = signal<Widget[]>([]);
+
+  constructor(private registry: WidgetRegistryService) {
+    const resolved = (widgetJsonConfig as any[]).map(w => ({
+      ...w,
+      content: this.registry.getComponent(w.type)
+    }));
+    this.widgets.set(resolved);
+  }
 
   addedWidgets = signal<Widget[]>([]);
 
@@ -66,5 +55,4 @@ export class DashboardService {
   removeWidget(id: number) {
     this.addedWidgets.set(this.addedWidgets().filter((widget) => widget.id !== id));
   }
-  constructor() {}
 }

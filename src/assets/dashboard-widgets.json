@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "label": "Subscribers",
+    "type": "subscribers",
+    "rows": 1,
+    "cols": 1,
+    "backgroundColor": "var(--palette-primary-main)",
+    "color": "whitesmoke"
+  },
+  {
+    "id": 2,
+    "label": "Views",
+    "type": "views",
+    "rows": 1,
+    "cols": 1,
+    "backgroundColor": "var(--palette-primary-main)",
+    "color": "whitesmoke"
+  }
+]
+
+
+
